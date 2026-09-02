@@ -55,7 +55,6 @@ export function register(name: string, password: string, role: UserRole): AgriUs
   const user: AgriUser = { name: trimmed, password, role }
   users.push(user)
   writeUsers(users)
-  localStorage.setItem(SESSION_KEY, JSON.stringify(user))
   return user
 }
 

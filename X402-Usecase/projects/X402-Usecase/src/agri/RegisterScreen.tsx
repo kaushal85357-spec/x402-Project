@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { register } from './auth'
-import type { AgriUser, UserRole } from './auth'
+import type { UserRole } from './auth'
+
+const SUCCESS_MESSAGE = 'Registration successful! Please log in with your new credentials'
 
 interface RegisterScreenProps {
-  onRegistered: (user: AgriUser) => void
+  onRegistered: (message: string) => void
   onGoLogin: () => void
 }
 
@@ -12,13 +14,24 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ onRegistered, onGoLogin
   const [password, setPassword] = useState('')
   const [role, setRole] = useState<UserRole>('Farmer')
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const redirectTimer = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (redirectTimer.current !== null) {
+        window.clearTimeout(redirectTimer.current)
+      }
+    }
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     try {
-      const user = register(name, password, role)
-      onRegistered(user)
+      register(name, password, role)
+      setSuccess(SUCCESS_MESSAGE)
+      redirectTimer.current = window.setTimeout(() => onRegistered(SUCCESS_MESSAGE), 1200)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed')
     }
@@ -56,7 +69,10 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ onRegistered, onGoLogin
             </select>
           </label>
           {error && <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{error}</p>}
-          <button type="submit" className="agri-btn-primary w-full">
+          {success && (
+            <p className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2">{success}</p>
+          )}
+          <button type="submit" className="agri-btn-primary w-full" disabled={Boolean(success)}>
             Create account
           </button>
           <button type="button" className="w-full text-amber-900 underline-offset-4 hover:underline" onClick={onGoLogin}>

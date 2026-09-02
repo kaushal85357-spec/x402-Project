@@ -5,9 +5,10 @@ import type { AgriUser } from './auth'
 interface LoginScreenProps {
   onLoggedIn: (user: AgriUser) => void
   onGoRegister: () => void
+  notice?: string
 }
 
-const LoginScreen: React.FC<LoginScreenProps> = ({ onLoggedIn, onGoRegister }) => {
+const LoginScreen: React.FC<LoginScreenProps> = ({ onLoggedIn, onGoRegister, notice }) => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -34,6 +35,9 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoggedIn, onGoRegister }) =
         </div>
         <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
           <h2 className="text-2xl font-semibold text-amber-950">Welcome back</h2>
+          {notice && (
+            <p className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2">{notice}</p>
+          )}
           <label className="block">
             <span className="text-sm font-medium text-amber-900">Name</span>
             <input
