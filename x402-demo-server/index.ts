@@ -62,7 +62,7 @@ if (!avmAddress || !facilitatorUrl) {
 }
 
 console.log('\n' + '═'.repeat(60));
-console.log('AgriProcure AI — x402 Resource Server');
+console.log('KrishiConnect AI — x402 Resource Server');
 console.log('═'.repeat(60));
 console.log('Configuration:');
 console.log(`  Receiver Address: ${avmAddress}`);
@@ -195,7 +195,7 @@ app.get('/weather', handleWeatherRequest);
 // Meme Generator - Pay $0.1 USDC (Payment Protected)
 app.post('/meme-generate', handleMemeGenerateRequest);
 
-// AgriProcure AI — Surplus Grain Warehouse Allocation & Logistic Agent ($0.01 USDC)
+// KrishiConnect AI — Surplus Grain Warehouse Allocation & Logistic Agent ($0.01 USDC)
 app.post('/ai-query', handleAIQuery);
 
 // Example 2: Analytics - Uncomment to enable
@@ -223,7 +223,7 @@ app.post('/ai-analysis', handleAIAnalysisRequest);
 app.get('/health', (c) => {
   return c.json({
     status: 'ok',
-    service: 'agriprocure-ai',
+    service: 'KrishiConnect-ai',
     uptime: process.uptime(),
   });
 });
@@ -234,7 +234,7 @@ app.get('/health', (c) => {
  */
 app.get('/info', (c) => {
   return c.json({
-    service: 'agriprocure-ai',
+    service: 'KrishiConnect-ai',
     version: '1.0.0',
     network: 'Algorand TestNet',
     receiver: avmAddress,

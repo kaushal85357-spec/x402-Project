@@ -105,7 +105,7 @@ export function createPaymentConfig(avmAddress: string): EndpointConfig {
     },
 
     /**
-     * AGRIPROCURE AI: Surplus Grain Warehouse Allocation & Logistic Agent
+     * KrishiConnect AI: Surplus Grain Warehouse Allocation & Logistic Agent
      * Consumers pay a $0.01 Testnet USDC tech fee to deploy the allocation agent.
      * Handler: POST /ai-query
      */

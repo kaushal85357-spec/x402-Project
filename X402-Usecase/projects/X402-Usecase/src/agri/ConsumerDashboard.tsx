@@ -94,7 +94,7 @@ const ConsumerDashboard: React.FC<ConsumerDashboardProps> = ({ user, onLogout })
       <header className="flex flex-wrap items-center justify-between gap-4 px-6 py-5 border-b border-amber-200 bg-white/80 backdrop-blur">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-amber-700">x402 monetization engine</p>
-          <h1 className="text-2xl font-semibold text-amber-950">AgriProcure Surplus Marketplace</h1>
+          <h1 className="text-2xl font-semibold text-amber-950">KrishiConnect Surplus Marketplace</h1>
           <p className="text-sm text-amber-800">
             {user.name} · {user.state} · {user.mobile} · Commercial buyer · Testnet USDC tech fee $0.01
           </p>

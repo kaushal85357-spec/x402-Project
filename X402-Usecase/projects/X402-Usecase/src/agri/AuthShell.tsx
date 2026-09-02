@@ -32,7 +32,7 @@ const AuthShell: React.FC<AuthShellProps> = ({ children }) => {
         <p className="text-xs uppercase tracking-[0.28em] text-emerald-800 font-semibold">
           Government of India · Agriculture portal
         </p>
-        <h1 className="mt-3 text-4xl lg:text-5xl font-semibold text-emerald-950 leading-tight">AgriProcure AI</h1>
+        <h1 className="mt-3 text-4xl lg:text-5xl font-semibold text-emerald-950 leading-tight">KrishiConnect AI</h1>
         <p className="mt-3 text-emerald-900/80 max-w-md">
           National grain procurement, tenant protection and surplus offtake — designed for farmers and licensed
           commercial buyers.
@@ -62,7 +62,7 @@ const AuthShell: React.FC<AuthShellProps> = ({ children }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <h2 id="how-it-works-title" className="text-2xl font-semibold text-emerald-950">
-              How AgriProcure works
+              How KrishiConnect works
             </h2>
             <ol className="mt-4 space-y-3 text-sm text-emerald-900/90 list-decimal pl-5">
               <li>Register with a unique mobile number, state and role. Farmers use the portal free of charge.</li>

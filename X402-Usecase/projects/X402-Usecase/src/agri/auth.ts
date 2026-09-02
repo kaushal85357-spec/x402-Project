@@ -33,8 +33,8 @@ export const AGRI_STATES = [
 
 export type AgriState = (typeof AGRI_STATES)[number]
 
-const USERS_KEY = 'agriprocure_users'
-const SESSION_KEY = 'agriprocure_session'
+const USERS_KEY = 'KrishiConnect_users'
+const SESSION_KEY = 'KrishiConnect_session'
 
 export function normalizeMobile(value: string): string {
   const digits = value.replace(/\D/g, '')

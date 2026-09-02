@@ -1,5 +1,5 @@
 /**
- * AgriProcure AI — Surplus Grain Warehouse Allocation & Logistic Agent
+ * KrishiConnect AI — Surplus Grain Warehouse Allocation & Logistic Agent
  *
  * POST /ai-query is payment-protected ($0.01 Testnet USDC via x402).
  * After the consumer invoice settles, this handler mock-verifies cargo
