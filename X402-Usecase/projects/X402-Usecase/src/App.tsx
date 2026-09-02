@@ -2,27 +2,22 @@ import { SupportedWallet, WalletId, WalletManager, WalletProvider } from '@txnla
 import { SnackbarProvider } from 'notistack'
 import { useMemo } from 'react'
 import AgriApp from './agri/AgriApp'
-import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 
-let supportedWallets: SupportedWallet[] = [{ id: WalletId.DEFLY }, { id: WalletId.PERA }, { id: WalletId.EXODUS }, { id: WalletId.LUTE }]
-
-if (import.meta.env.VITE_ALGOD_NETWORK === 'localnet') {
-  const kmdConfig = getKmdConfigFromViteEnvironment()
-  supportedWallets = [
-    {
-      id: WalletId.KMD,
-      options: {
-        baseServer: kmdConfig.server,
-        token: String(kmdConfig.token),
-        port: String(kmdConfig.port),
-      },
-    },
-    ...supportedWallets,
-  ]
-}
+const supportedWallets: SupportedWallet[] = [
+  { id: WalletId.DEFLY },
+  { id: WalletId.PERA },
+  { id: WalletId.EXODUS },
+  { id: WalletId.LUTE }
+]
 
 export default function App() {
-  const algodConfig = getAlgodConfigFromViteEnvironment()
+  // Hardcoded production-safe testnet fallback to bypass missing Vercel .env files
+  const algodConfig = {
+    network: 'testnet',
+    server: 'https://algonode.cloud',
+    port: 443,
+    token: ''
+  }
 
   const walletManager = useMemo(
     () =>
@@ -33,8 +28,8 @@ export default function App() {
           [algodConfig.network]: {
             algod: {
               baseServer: algodConfig.server,
-              port: algodConfig.port,
-              token: String(algodConfig.token),
+              port: String(algodConfig.port),
+              token: algodConfig.token,
             },
           },
         },
