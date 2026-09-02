@@ -162,3 +162,50 @@ pre code {
   background: linear-gradient(135deg, #1f3d24, #854d0e);
 }
 
+.gov-auth-shell {
+  background: linear-gradient(180deg, #f4f7f2 0%, #e7eee4 55%, #f7f1e4 100%);
+}
+
+.gov-auth-brand {
+  background:
+    linear-gradient(165deg, rgba(236, 253, 245, 0.95), rgba(254, 252, 232, 0.9)),
+    radial-gradient(circle at 12% 18%, rgba(16, 185, 129, 0.18), transparent 42%);
+  border-right: 1px solid rgba(6, 78, 59, 0.08);
+}
+
+.gov-pillar {
+  @apply rounded-xl bg-white/70 border border-emerald-100 px-4 py-3 shadow-sm;
+}
+
+.gov-how-link {
+  @apply text-emerald-800 font-semibold underline underline-offset-4 hover:text-emerald-950;
+}
+
+.gov-form-card {
+  @apply bg-white rounded-2xl shadow-xl border border-emerald-100 p-8;
+}
+
+.gov-tabs {
+  @apply grid grid-cols-2 rounded-xl bg-emerald-50 p-1 border border-emerald-100;
+}
+
+.gov-tab {
+  @apply rounded-lg px-2 py-2 text-xs sm:text-sm font-medium text-emerald-800;
+}
+
+.gov-tab-active {
+  @apply bg-white text-emerald-950 shadow-sm;
+}
+
+.gov-otp-badge {
+  @apply fixed top-5 right-5 z-50 rounded-full bg-amber-900 text-amber-50 text-sm font-semibold px-4 py-2 shadow-lg;
+}
+
+.gov-modal-backdrop {
+  @apply fixed inset-0 z-50 bg-emerald-950/40 flex items-center justify-center p-4;
+}
+
+.gov-modal {
+  @apply w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl border border-emerald-100;
+}
+

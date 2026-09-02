@@ -159,7 +159,9 @@ const FarmerDashboard: React.FC<FarmerDashboardProps> = ({ user, onLogout }) => 
           <p className="text-amber-200/80 text-xs uppercase tracking-widest">100% free for farmers</p>
           <h1 className="text-2xl font-semibold text-white mt-1">AgriProcure AI</h1>
           <p className="text-amber-100/80 text-sm mt-2">{user.name}</p>
-          <p className="text-amber-200/70 text-xs">Role: Farmer</p>
+          <p className="text-amber-200/70 text-xs">
+            {user.userType} · {user.state} · {user.mobile}
+          </p>
         </div>
         <nav className="mt-8 space-y-1">
           {nav.map((item) => (

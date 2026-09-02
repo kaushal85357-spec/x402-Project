@@ -48,7 +48,7 @@ const AgriApp: React.FC = () => {
     )
   }
 
-  if (user.role === 'Farmer') {
+  if (user.userType === 'Farmer') {
     return <FarmerDashboard user={user} onLogout={handleLogout} />
   }
 
